@@ -1,0 +1,142 @@
+:root {
+  --white: #f0f0f0;
+  --black: #111;
+  --gray: #424242;
+}
+
+* {
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--black);
+}
+
+.dark * {
+  color: var(--white);
+}
+
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+
+  height: 100dvh;
+}
+
+body.dark {
+  background-color: #111;
+}
+
+button {
+}
+
+a {
+  padding: 0 8px;
+  margin: 0;
+}
+
+a.active {
+  background-color: #7e88fa;
+}
+
+.dark a.active {
+  background-color: #163986;
+}
+
+.main-container {
+  width: calc(100% - 1.2rem);
+  height: calc(100% - 1.2rem - 20px - 20px);
+
+  padding: 0.6rem;
+}
+
+.container {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.lg-row {
+  flex-direction: row;
+}
+
+.lg-col {
+  flex-direction: column;
+}
+
+/* section */
+
+section {
+  border: 1px var(--black) solid;
+  padding: 0.3rem 0.6rem;
+  padding-top: 20px;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.dark section {
+  border-color: var(--white);
+}
+
+section > h1:first-child {
+  font-size: 14px;
+  padding: 0 10px;
+  margin: 0;
+  margin-top: -30px;
+  font-weight: normal;
+  background-color: var(--black);
+  float: left;
+}
+
+#main-panel {
+}
+
+#projects-section {
+  max-width: 800px;
+}
+
+#right-sidebar {
+  width: 25rem;
+}
+
+#tamacowchi-house {
+  height: 15rem;
+
+  flex-grow: 0;
+}
+
+/* header & footer */
+
+header {
+  background-color: #161616;
+  height: 20px;
+
+  padding: 0 8px;
+
+  display: flex;
+}
+
+.link-section {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.extra-section {
+  flex-shrink: 0;
+}
+
+footer {
+  height: 20px;
+}
+
+/* responsive */
+
+@media screen and (width < 400px) {
+  .lg-row {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width < 1270px) {
+  #projects-section {
+    display: none;
+  }
+}
