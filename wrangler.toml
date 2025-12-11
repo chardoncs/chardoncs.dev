@@ -1,0 +1,5 @@
+name = "portfolio"
+
+[[routes]]
+pattern = "chardoncs.dev"
+custom_domain = true
