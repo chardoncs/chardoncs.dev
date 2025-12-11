@@ -17,8 +17,6 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
-
-    <script src="scripts/index.js"></script>
   </head>
   <body>
     <header>
@@ -32,7 +30,7 @@
     </header>
 
     <div>
-      <p>[guest@chardoncs.dev ~]$ cat intro.txt</p>
+      <p>[guest@chardoncs.dev ~]$ </p>
     </div>
 
     <div class="container lg-row main-container">
@@ -40,15 +38,26 @@
         <section id="display">
           <h1>Intro</h1>
 
-          Ayo 🫡 I'm <b class="hl-n">Charles Dong</b>, a software engineer currently based in Shanghai.
+          Ayo 🫡 I'm <b class="hl-blue">Charles Dong</b>, a software engineer currently based in Shanghai.
+
+          <ul id="contact-list">
+            <li><a href="mailto:chardon_cs@proton.me" title="chardon_cs@proton.me">Email</a></li>
+            <li><a href="https://codeberg.org/chardoncs" target="_blank">Codeberg</a></li>
+            <li><a href="https://github.com/chardoncs" target="_blank">GitHub</a></li>
+          </ul>
         </section>
 
         <section id="projects-section">
           <h1>Projects</h1>
 
           <div class="project">
-            <h2>Ollama Lab</h2>
-            <p>AI interface and manager built with Tauri for Ollama</p>
+            <h2><a href="https://github.com/ollama-lab" target="_blank">Ollama Lab</a></h2>
+            <p>AI interface and model manager built with Tauri for Ollama</p>
+          </div>
+
+          <div class="project">
+            <h2>chardoncs.dev</h2>
+            <p>This website. Built with <b class="hl-html">HTML</b>, <b class="hl-css">CSS</b>, and (sprinkles of 🤌) <b class="hl-js">JavaScript</b> with no magic</p>
           </div>
         </section>
       </div>
@@ -56,14 +65,29 @@
       <div class="container lg-col">
         <section id="skills-section">
           <h1>Skills</h1>
+          
+          <h2 class="hl-teal">Programming languages</h2>
+
+          <h2 class="hl-violet">Frameworks & libs</h2>
+
+          <h2 class="hl-orange">Human Languages</h2>
+        </section>
+
+        <section>
+          <h1>Hobbies</h1>
         </section>
 
         <div class="container lg-row" id="bottom-bar">
           <section id="tamacowchi-house">
             <h1>???</h1>
+
+            <noscript>Tamacowchi can't survive without JavaScript...</noscript>
           </section>
+          <script src="scripts/tamacowchi.js" async></script>
         </div>
       </div>
     </div>
+
+    <script src="scripts/bootup.js"></script>
   </body>
 </html>
