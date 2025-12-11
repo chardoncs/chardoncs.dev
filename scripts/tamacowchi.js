@@ -68,4 +68,4 @@ function initTamacowchiBox() {
   `;
 }
 
-initTamacowchiBox();
+//initTamacowchiBox();

@@ -52,36 +52,21 @@ h1,h2,h3,h4,h5,h6 {
   flex-grow: 1;
 }
 
-/* highlights */
+@media (prefers-color-scheme: light) {
+  :root {
+  }
 
-.hl-blue {
-  color: #1eb1e2;
-}
+  * {
+    color: var(--black);
+  }
 
-.hl-teal {
-  color: #1ee291;
-}
+  body {
+    background-color: var(--white);
+  }
 
-.hl-violet {
-  color: violet;
-}
-
-.hl-orange {
-  color: orange;
-}
-
-/* highlights - programming languages */
-
-.hl-html {
-  color: #e34c26;
-}
-
-.hl-css {
-  color: rebeccapurple;
-}
-
-.hl-js {
-  color: #f0db4f;
+  a.active {
+    background-color: #7e88fa;
+  }
 }
 
 /* section */
@@ -127,24 +112,7 @@ header {
   flex-shrink: 0;
 }
 
-/* responsive */
-
 @media (prefers-color-scheme: light) {
-  :root {
-  }
-
-  * {
-    color: var(--black);
-  }
-
-  body {
-    background-color: var(--white);
-  }
-
-  a.active {
-    background-color: #7e88fa;
-  }
-
   section {
     border-color: var(--black);
   }
@@ -161,6 +129,8 @@ header {
     display: none;
   }
 }
+
+/* responsive */
 
 @media screen and (width < 420px) {
   .lg-row {

@@ -8,7 +8,9 @@
 }
 
 #projects-section .project {
-  padding: 2px 6px;
+  padding: 6px 6px;
+
+  line-height: 1;
 }
 
 #tamacowchi-house {
@@ -37,6 +39,10 @@
 @media (prefers-color-scheme: light) {
   .contact-icon {
     filter: unset;
+  }
+
+  #projects-section .project {
+    border-bottom: 1px var(--black) solid;
   }
 }
 
