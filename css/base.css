@@ -2,30 +2,20 @@
   --white: #f0f0f0;
   --black: #111;
   --gray: #424242;
+
+  --blue: #285b9e;
+  --green: #1fb63c;
 }
 
 * {
-  font-family: monospace;
+  font-family: "Martian Mono", monospace;
   font-size: 14px;
-  color: var(--black);
-}
-
-.dark * {
   color: var(--white);
 }
 
 body {
-  background-color: #f0f0f0;
+  background-color: var(--black);
   margin: 0;
-
-  height: 100dvh;
-}
-
-body.dark {
-  background-color: #111;
-}
-
-button {
 }
 
 a {
@@ -34,18 +24,7 @@ a {
 }
 
 a.active {
-  background-color: #7e88fa;
-}
-
-.dark a.active {
   background-color: #163986;
-}
-
-.main-container {
-  width: calc(100% - 1.2rem);
-  height: calc(100% - 1.2rem - 20px - 20px);
-
-  padding: 0.6rem;
 }
 
 .container {
@@ -61,19 +40,27 @@ a.active {
   flex-direction: column;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
+/* highlights */
+
+.hl-n {
+  color: #1eb1e2;
+}
+
 /* section */
 
 section {
-  border: 1px var(--black) solid;
+  border: 1px var(--white) solid;
   padding: 0.3rem 0.6rem;
   padding-top: 20px;
 
   flex-grow: 1;
   flex-shrink: 0;
-}
 
-.dark section {
-  border-color: var(--white);
+  max-width: 600px;
 }
 
 section > h1:first-child {
@@ -84,23 +71,6 @@ section > h1:first-child {
   font-weight: normal;
   background-color: var(--black);
   float: left;
-}
-
-#main-panel {
-}
-
-#projects-section {
-  max-width: 800px;
-}
-
-#right-sidebar {
-  width: 25rem;
-}
-
-#tamacowchi-house {
-  height: 15rem;
-
-  flex-grow: 0;
 }
 
 /* header & footer */
@@ -123,20 +93,43 @@ header {
   flex-shrink: 0;
 }
 
-footer {
-  height: 20px;
-}
-
 /* responsive */
 
-@media screen and (width < 400px) {
-  .lg-row {
-    flex-direction: column;
+@media (prefers-color-scheme: light) {
+  :root {
+  }
+
+  * {
+    color: var(--black);
+  }
+
+  body {
+    background-color: var(--white);
+  }
+
+  a.active {
+    background-color: #7e88fa;
+  }
+
+  section {
+    border-color: var(--black);
+  }
+
+  section > h1:first-child {
+    background-color: var(--white);
+  }
+
+  header {
+    background-color: #eaeaea;
+  }
+
+  #light-mode {
+    display: none;
   }
 }
 
-@media screen and (width < 1270px) {
-  #projects-section {
-    display: none;
+@media screen and (width < 420px) {
+  .lg-row {
+    flex-direction: column;
   }
 }

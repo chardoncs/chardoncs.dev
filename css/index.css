@@ -1,0 +1,39 @@
+.main-container {
+  padding: 0.6rem;
+  
+  display: flex;
+  
+  align-content: center;
+  justify-content: center;
+}
+
+#intro-section.active {
+  border-color: var(--blue);
+}
+
+#projects-section .project {
+  border: 1px var(--blue) solid;
+  padding: 2px 8px;
+}
+
+#tamacowchi-house {
+  width: 28rem;
+
+  flex-grow: 0;
+}
+
+#bottom-bar {
+  min-height: 15rem;
+}
+
+@media screen and (width < 800px) {
+  #tamacowchi-house {
+    width: 20rem;
+  }
+}
+
+@media screen and (width < 420px) {
+  #tamacowchi-house {
+    width: unset;
+  }
+}
