@@ -40,10 +40,6 @@
   .contact-icon {
     filter: unset;
   }
-
-  #projects-section .project {
-    border-bottom: 1px var(--black) solid;
-  }
 }
 
 @media screen and (width < 800px) {
