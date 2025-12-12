@@ -155,8 +155,16 @@
   }
 }
 
-@media screen and (width < 420px) {
+@media screen and (width < 1000px) {
   #right-grid {
     width: unset;
+  }
+
+  #tamacowchi-house {
+    height: 14rem;
+  }
+
+  section {
+    width: unset !important;
   }
 }

@@ -160,7 +160,7 @@ header {
 
 /* responsive */
 
-@media screen and (width < 420px) {
+@media screen and (width < 1000px) {
   .lg-row {
     flex-direction: column;
   }
