@@ -231,6 +231,7 @@ ___/\\/\\___
     }
 
     this.print("turning");
+    // The actual image will be loaded 1 sec before the turn
     this.turnedImg.src = this.TURNING_DICT[magicWord];
     this.turnedImg.alt = magicWord;
     await this.sleep(1000);
