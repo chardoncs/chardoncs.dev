@@ -1,5 +1,7 @@
-async function playBootup() {
-}
+const bootup = {
+  async play() {
+  },
 
-function resetBootup() {
-}
+  reset() {
+  },
+};
