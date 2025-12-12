@@ -31,10 +31,10 @@
     </header>
 
     <div>
-      <p>[chardon@shuyaku ~]$ <span id="cli-input"></span><span class="cli-cursor" id="cli-cursor">&block;</span></p>
+      <p>[chardon@shuyaku ~]$ <span id="cli-input">whoami</span><span class="cli-cursor" id="cli-cursor">&block;</span></p>
     </div>
 
-    <div class="container lg-row main-container">
+    <div class="container lg-row main-container" id="main-container">
       <div class="container lg-col">
         <section id="display">
           <h1>Intro</h1>
@@ -122,14 +122,5 @@
         </div>
       </div>
     </div>
-
-    <script src="scripts/bootup.js"></script>
-    <script>
-      // Initialize the bootup, which will make the main container invisible for a while.
-      // It's controlled via JavaScript so that if the browser doesn't support JavaScript,
-      // the main container won't disappear.
-      bootup.reset();
-      bootup.play();
-    </script>
   </body>
 </html>

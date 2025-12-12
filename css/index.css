@@ -1,18 +1,60 @@
+:root {
+  --cmd-length: 6;
+}
+
 @keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  48% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  98% {
+    opacity: 0;
+  }
+}
+
+@keyframes cmd-morph {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: calc(10px * var(--cmd-length));
+  }
+}
+
+@keyframes appear {
   0% {
     opacity: 0;
   }
 
-  48% {
+  99% {
     opacity: 0;
   }
 
-  50% {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
     opacity: 1;
   }
 
-  98% {
+  99% {
     opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -54,10 +96,27 @@
   margin-inline-end: 4px;
 }
 
+/* bootup */
+
+#cli-input {
+  display: inline-flex;
+  line-height: 1;
+  white-space: nowrap;
+  overflow-x: hidden;
+  position: relative;
+  animation: 300ms cmd-morph steps(var(--cmd-length));
+}
+
 .cli-cursor {
   line-height: 1;
-  animation: blink 300ms linear;
+  animation: 1s blink linear 0.50 forwards;
 }
+
+#main-container {
+  animation: 350ms appear linear;
+}
+
+/* end bootup */
 
 @media (prefers-color-scheme: light) {
   .contact-icon {
