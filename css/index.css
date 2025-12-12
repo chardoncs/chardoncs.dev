@@ -1,3 +1,21 @@
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  48% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  98% {
+    opacity: 1;
+  }
+}
+
 .main-container {
   padding: 0.6rem;
   
@@ -34,6 +52,11 @@
   width: 1rem;
   filter: invert(100%);
   margin-inline-end: 4px;
+}
+
+.cli-cursor {
+  line-height: 1;
+  animation: blink 300ms linear;
 }
 
 @media (prefers-color-scheme: light) {
