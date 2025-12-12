@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Martian Mono';
+    font-weight: normal;
+    src: url('/fonts/MartianMono-StdRg.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Martian Mono';
+    font-weight: bold;
+    src: url('/fonts/MartianMono-StdBd.woff2') format('woff2');
+}
+
 :root {
   --white: #f0f0f0;
   --black: #111;
@@ -8,7 +20,7 @@
 }
 
 * {
-  font-family: "Martian Mono", monospace;
+  font-family: "Martian Mono", monospace, sans-serif;
   font-size: 14px;
   color: var(--white);
 }
