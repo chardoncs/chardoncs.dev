@@ -106,7 +106,8 @@
   white-space: nowrap;
   overflow-x: hidden;
   position: relative;
-  animation: 300ms cmd-morph steps(var(--cmd-length));
+  animation: 300ms cmd-morph steps(var(--cmd-length)) both;
+  animation-delay: 200ms;
 }
 
 .cli-cursor {
@@ -115,7 +116,7 @@
 }
 
 #main-container {
-  animation: 350ms appear linear;
+  animation: 550ms appear linear;
 }
 
 /* end bootup */
