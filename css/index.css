@@ -105,6 +105,7 @@
   line-height: 1;
   white-space: nowrap;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
   animation: 300ms cmd-morph steps(var(--cmd-length)) both;
   animation-delay: 200ms;
