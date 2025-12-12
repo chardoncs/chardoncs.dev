@@ -42,6 +42,14 @@
   color: #79d4fd;
 }
 
+.hl-python {
+  color: #366994;
+}
+
+.hl-zig {
+  color: #f7a41d;
+}
+
 .hl-bun {
   color: #fbf0df;
 }

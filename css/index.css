@@ -67,6 +67,10 @@
   justify-content: center;
 }
 
+#right-grid {
+  width: 28rem;
+}
+
 #projects-section .project {
   padding: 6px 6px;
 
@@ -74,8 +78,6 @@
 }
 
 #tamacowchi-house {
-  width: 28rem;
-
   flex-grow: 0;
 }
 
@@ -125,13 +127,13 @@
 }
 
 @media screen and (width < 800px) {
-  #tamacowchi-house {
+  #right-grid {
     width: 20rem;
   }
 }
 
 @media screen and (width < 420px) {
-  #tamacowchi-house {
+  #right-grid {
     width: unset;
   }
 }

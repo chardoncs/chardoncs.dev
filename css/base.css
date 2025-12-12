@@ -80,6 +80,7 @@ section {
   flex-shrink: 0;
 
   max-width: 600px;
+  width: 100%;
 }
 
 section > h1:first-child {
@@ -90,6 +91,19 @@ section > h1:first-child {
   font-weight: normal;
   background-color: var(--black);
   float: left;
+}
+
+section > .scrollable {
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
 }
 
 /* header & footer */
