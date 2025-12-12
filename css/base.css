@@ -58,9 +58,6 @@ a.plain {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-  }
-
   * {
     color: var(--black);
   }

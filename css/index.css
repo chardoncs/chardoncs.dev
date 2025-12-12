@@ -121,6 +121,28 @@
 
 /* end bootup */
 
+/* tamacowchi */
+#tamacowchi-house {
+  position: relative;
+}
+
+#tamacowchi {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.turned-img {
+  width: 7rem;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* end tamacowchi */
+
 @media (prefers-color-scheme: light) {
   .contact-icon {
     filter: unset;
