@@ -1,4 +1,8 @@
 name = "portfolio"
+compatibility_date = "2025-12-12"
+
+[assets]
+directory = "."
 
 [[routes]]
 pattern = "chardoncs.dev"
