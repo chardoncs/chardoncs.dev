@@ -58,20 +58,6 @@ ___/\\/\\___
 
   status: "idle",
 
-  root: undefined,
-  turnedImg: undefined,
-
-  blinkInterval: undefined,
-
-  pressMouseDownListener: undefined,
-  pressMouseUpListener: undefined,
-  pressTouchStartListener: undefined,
-  pressTouchEndListener: undefined,
-
-  hoverToSayListener: undefined,
-
-  currentSentence: undefined,
-
   sleep(minisec) {
     return new Promise((resolve) => {
       setTimeout(() => resolve(), minisec);
@@ -221,7 +207,7 @@ ___/\\/\\___
 
   async turnIntoFigure(magicWord) {
     this.cancelPressListeners();
-    this.cancelHoverToSay();
+    this.cancelSayStreaming();
 
     for (const interval of this.MIRROR_INTERVALS) {
       this.root.style.transform = "scaleX(-1)";
@@ -245,12 +231,14 @@ ___/\\/\\___
     this.turnedImg.style.display = "none";
     this.root.style.display = "";
 
-    this.loadHoverToSay();
+    this.loadSayStreamingListeners();
     this.loadPressListeners();
   },
 
-  loadHoverToSay() {
-    this.hoverToSayListener = this.root.addEventListener("mouseover", async () => {
+  loadSayStreamingListeners() {
+    // Use lambda, otherwise `this` would be the `say()` function rather
+    // than the `tamacowchi` global object
+    const say = async () => {
       if (this.currentSentence === undefined) {
         const sentence = this.CANDIDATE_SENTENCES[Math.floor(Math.random() * this.CANDIDATE_SENTENCES.length)];
         await this.streamSaying(sentence);
@@ -261,19 +249,25 @@ ___/\\/\\___
           this.startBlinking();
         }
       }
-    });
+    };
+
+    this.hoverToSayListener = this.root.addEventListener("mouseover", say);
+    this.touchToSayListener = this.root.addEventListener("touchstart", say);
   },
 
-  cancelHoverToSay() {
+  cancelSayStreaming() {
     this.root.removeEventListener("mouseover", this.hoverToSayListener);
     this.hoverToSayListener = undefined;
+
+    this.root.removeEventListener("touchstart", this.touchToSayListener);
+    this.touchToSayListener = undefined;
   },
 
   start() {
     this.print();
     this.startBlinking();
     this.loadPressListeners();
-    this.loadHoverToSay();
+    this.loadSayStreamingListeners();
   },
 
   initTamacowchiBox() {
