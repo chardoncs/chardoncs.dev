@@ -1,4 +1,4 @@
-/* highlights */
+/* Highlights */
 
 .hl-blue {
   color: #1eb1e2;
@@ -16,7 +16,7 @@
   color: orange;
 }
 
-/* highlights - brands */
+/* Languages */
 
 .hl-html {
   color: #e34c26;
@@ -42,6 +42,10 @@
   color: #79d4fd;
 }
 
+.hl-lua {
+  color: #00007a;
+}
+
 .hl-python {
   color: #366994;
 }
@@ -49,6 +53,8 @@
 .hl-zig {
   color: #f7a41d;
 }
+
+/* Frameworks & Libs */
 
 .hl-bun {
   color: #fbf0df;
@@ -76,7 +82,12 @@
 
 @media (prefers-color-scheme: light) {
   .hl-js, .hl-bun {
-    -webkit-text-stroke: 1px var(--gray);
+    -webkit-text-stroke: 0.4px var(--gray);
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .hl-lua {
+    -webkit-text-stroke: 0.4px var(--white);
+  }
+}
