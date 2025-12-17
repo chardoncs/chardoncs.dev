@@ -91,9 +91,9 @@ ___/\\/\\___
       const lines = Math.ceil(saying.length / this.LINE_WIDTH);
       // TODO: softwrap
       const width = Math.min(this.LINE_WIDTH, saying.length);
-      const border = ` ${"-".repeat(width + 2)} \n`;
 
-      let bubble = border;
+      // Upper border
+      let bubble = ` ${"_".repeat(width + 2)} \n`;
       if (lines > 1) {
         let s, e;
         for (let i = 0; i < lines; i++) {
@@ -118,7 +118,8 @@ ___/\\/\\___
       } else {
         bubble += `< ${saying} >\n`;
       }
-      bubble += border;
+      // Lower border
+      bubble += ` ${"-".repeat(width + 2)} \n`;
 
       output = bubble + this.combineBubbleLine(output);
     }
