@@ -144,10 +144,8 @@
 
 /* end tamacowchi */
 
-@media (prefers-color-scheme: light) {
-  .contact-icon {
-    filter: unset;
-  }
+body.light .contact-icon {
+  filter: unset;
 }
 
 @media screen and (width < 800px) {

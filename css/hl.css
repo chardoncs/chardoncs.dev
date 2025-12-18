@@ -1,93 +1,89 @@
 /* Highlights */
 
 .hl-blue {
-  color: #1eb1e2;
+  color: #1eb1e2 !important;
 }
 
 .hl-teal {
-  color: #1ee291;
+  color: #1ee291 !important;
 }
 
 .hl-violet {
-  color: violet;
+  color: violet !important;
 }
 
 .hl-orange {
-  color: orange;
+  color: orange !important;
 }
 
 /* Languages */
 
 .hl-html {
-  color: #e34c26;
+  color: #e34c26 !important;
 }
 
 .hl-css {
-  color: rebeccapurple;
+  color: rebeccapurple !important;
 }
 
 .hl-js {
-  color: #f0db4f;
+  color: #f0db4f !important;
 }
 
 .hl-ts {
-  color: #3178c6;
+  color: #3178c6 !important;
 }
 
 .hl-rust {
-  color: #dea584;
+  color: #dea584 !important;
 }
 
 .hl-go {
-  color: #79d4fd;
+  color: #79d4fd !important;
 }
 
 .hl-lua {
-  color: #00007a;
+  color: #00007a !important;
 }
 
 .hl-python {
-  color: #366994;
+  color: #366994 !important;
 }
 
 .hl-zig {
-  color: #f7a41d;
+  color: #f7a41d !important;
 }
 
 /* Frameworks & Libs */
 
 .hl-bun {
-  color: #fbf0df;
+  color: #fbf0df !important;
 }
 
 .hl-preact {
-  color: #673ab8;
+  color: #673ab8 !important;
 }
 
 .hl-hono {
-  color: #ff5218;
+  color: #ff5218 !important;
 }
 
 .hl-cf {
-  color: #f6821f;
+  color: #f6821f !important;
 }
 
 .hl-mdx {
-  color: #fcb32c;
+  color: #fcb32c !important;
 }
 
 .hl-vite {
-  color: #8a75fe;
+  color: #8a75fe !important;
 }
 
-@media (prefers-color-scheme: light) {
-  .hl-js, .hl-bun {
-    -webkit-text-stroke: 0.4px var(--gray);
-  }
+body.light :is(.hl-js, .hl-bun) {
+  -webkit-text-stroke: 0.4px var(--gray);
 }
 
-@media (prefers-color-scheme: dark) {
-  .hl-lua {
-    -webkit-text-stroke: 0.4px var(--white);
-  }
+body:not(.light) .hl-lua {
+  -webkit-text-stroke: 0.4px var(--white);
 }
