@@ -2,7 +2,7 @@
 
 **Charles' personal website チャールズのホームページ**
 
-The web pages are written in vanilla HTML, CSS, and (sprinkles of) JavaScript (ES6)
+The web pages are written in vanilla HTML, CSS, and (sprinkles of) JavaScript (ES 2017)
 with zero shadow DOM or React.
 
 > For the old website built with Preact and Bun,
