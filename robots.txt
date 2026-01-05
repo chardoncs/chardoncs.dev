@@ -1,4 +1,13 @@
 User-Agent: *
+
 Allow: /
-Disallow: /project
-Disallow: /about
+Allow: /ja/
+Allow: /zh-hans-cn/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /fragments/
+Disallow: /images/
+Disallow: /scripts/
+Disallow: /secrets/
+Disallow: /ja/secrets/
+Disallow: /zh-hans-cn/secrets/
