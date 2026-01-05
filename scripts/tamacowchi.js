@@ -94,6 +94,7 @@ ___/\\/\\___
 
       // Upper border
       let bubble = ` ${"_".repeat(width + 2)} \n`;
+      // Side borders
       if (lines > 1) {
         let s, e;
         for (let i = 0; i < lines; i++) {
@@ -242,13 +243,14 @@ ___/\\/\\___
     const say = async () => {
       if (this.currentSentence === undefined) {
         const sentence = this.CANDIDATE_SENTENCES[Math.floor(Math.random() * this.CANDIDATE_SENTENCES.length)];
+        this.stopBlinking();
         await this.streamSaying(sentence);
 
         if (this.TURNING_DICT[sentence]) {
-          this.stopBlinking();
-          this.turnIntoFigure(sentence);
-          this.startBlinking();
+          await this.turnIntoFigure(sentence);
         }
+
+        this.startBlinking();
       }
     };
 
@@ -271,14 +273,17 @@ ___/\\/\\___
     this.loadSayStreamingListeners();
   },
 
-  initTamacowchiBox() {
-    const container = document.getElementById("tamacowchi");
-    container.innerHTML = `
-      <pre class="tamacowchi-text-root"><code></code></pre>
-      <img class="turned-img" src="" alt="" style="display: none;" />
-    `;
+  initTamacowchiBox(id) {
+    const container = document.getElementById(id);
 
-    this.root = container.querySelector(".tamacowchi-text-root");
-    this.turnedImg = container.querySelector(".turned-img");
+    this.root = document.createElement("pre");
+    this.root.classList.add("tamacowchi-text-root");
+    this.root.appendChild(document.createElement("code"));
+
+    this.turnedImg = document.createElement("img");
+    this.turnedImg.classList.add("turned-img");
+    this.turnedImg.style.display = "none";
+
+    container.append(this.root, this.turnedImg);
   },
 };
