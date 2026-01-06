@@ -247,7 +247,13 @@ ___/\\/\\___
         await this.streamSaying(sentence);
 
         if (this.TURNING_DICT[sentence]) {
+          this.cancelPressListeners();
+          this.cancelSayStreaming();
+
           await this.turnIntoFigure(sentence);
+
+          this.loadSayStreamingListeners();
+          this.loadPressListeners();
         }
 
         this.startBlinking();
