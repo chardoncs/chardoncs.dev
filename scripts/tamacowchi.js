@@ -57,6 +57,13 @@ ___/\\/\\___
   MIRROR_INTERVALS: [500, 300, 200, 100, 50, 30, 30, 30, 30, 30, 10, 10],
 
   status: "idle",
+  listeners: {},
+
+  registerListener(name, func, force = false) {
+    if (force || !this.listeners[name]) {
+      this.listeners[name] = func;
+    }
+  },
 
   sleep(minisec) {
     return new Promise((resolve) => {
@@ -176,35 +183,22 @@ ___/\\/\\___
   },
 
   loadPressListeners() {
-    this.pressMouseDownListener = this.root.addEventListener("mousedown", () => {
-      this.print("pressed");
-    });
+    this.registerListener("turnPressed", () => this.print("pressed"));
+    this.registerListener("turnIdle", () => this.print("idle"));
 
-    this.pressMouseUpListener = this.root.addEventListener("mouseup", () => {
-      this.print("idle");
-    });
+    this.root.addEventListener("mousedown", this.listeners.turnPressed);
+    this.root.addEventListener("touchstart", this.listeners.turnPressed);
 
-    this.pressTouchStartListener = this.root.addEventListener("touchstart", () => {
-      this.print("pressed");
-    });
-
-    this.pressTouchEndListener = this.root.addEventListener("touchend", () => {
-      this.print("idle");
-    });
+    this.root.addEventListener("mouseup", this.listeners.turnIdle);
+    this.root.addEventListener("touchend", this.listeners.turnIdle);
   },
 
   cancelPressListeners() {
-    this.root.removeEventListener("mousedown", this.pressMouseDownListener);
-    this.pressMouseDownListener = undefined;
+    this.root.removeEventListener("mousedown", this.listeners.turnPressed);
+    this.root.removeEventListener("touchstart", this.listeners.turnPressed);
 
-    this.root.removeEventListener("mouseup", this.pressMouseUpListener);
-    this.pressMouseUpListener = undefined;
-
-    this.root.removeEventListener("touchstart", this.pressTouchStartListener);
-    this.pressTouchStartListener = undefined;
-
-    this.root.removeEventListener("touchend", this.pressTouchEndListener);
-    this.pressTouchEndListener = undefined;
+    this.root.removeEventListener("mouseup", this.listeners.turnIdle);
+    this.root.removeEventListener("touchend", this.listeners.turnIdle);
   },
 
   async turnIntoFigure(magicWord) {
@@ -240,7 +234,7 @@ ___/\\/\\___
   loadSayStreamingListeners() {
     // Use lambda, otherwise `this` would be the `say()` function rather
     // than the `tamacowchi` global object
-    const say = async () => {
+    this.registerListener("say", async () => {
       if (this.currentSentence === undefined) {
         const sentence = this.CANDIDATE_SENTENCES[Math.floor(Math.random() * this.CANDIDATE_SENTENCES.length)];
         this.stopBlinking();
@@ -252,18 +246,15 @@ ___/\\/\\___
 
         this.startBlinking();
       }
-    };
+    });
 
-    this.hoverToSayListener = this.root.addEventListener("mouseover", say);
-    this.touchToSayListener = this.root.addEventListener("touchstart", say);
+    this.root.addEventListener("mouseover", this.listeners.say);
+    this.root.addEventListener("touchstart", this.listeners.say);
   },
 
   cancelSayStreaming() {
-    this.root.removeEventListener("mouseover", this.hoverToSayListener);
-    this.hoverToSayListener = undefined;
-
-    this.root.removeEventListener("touchstart", this.touchToSayListener);
-    this.touchToSayListener = undefined;
+    this.root.removeEventListener("mouseover", this.listeners.say);
+    this.root.removeEventListener("touchstart", this.listeners.say);
   },
 
   start() {
